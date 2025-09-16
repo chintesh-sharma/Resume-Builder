@@ -1,0 +1,283 @@
+/* =========================
+   Root Variables
+========================= */
+:root {
+    --bg: #f3f6f8;        /* Page background color */
+    --card: #ffffff;      /* Card/box background color */
+    --accent: #10636d;    /* Primary color for buttons, highlights */
+    --muted: #6b7280;     /* Muted text color */
+}
+
+/* =========================
+   Global Styles
+========================= */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    background: var(--bg);
+    color: #111;
+}
+
+/* =========================
+   Header
+========================= */
+header {
+    background: #0f1724;
+    color: #fff;
+    padding: 16px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+/* =========================
+   Main Container
+========================= */
+main {
+    max-width: 1200px;
+    margin: 18px auto;
+    padding: 12px;
+}
+
+/* =========================
+   Card Styles
+========================= */
+.card {
+    background: var(--card);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* =========================
+   Template Selection
+========================= */
+.templates-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.template-card {
+    width: 280px;               /* Each template box width */
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #e6eef0;
+    text-align: center;
+    background: #fff;
+    margin: auto;
+    transition: 0.3s;           /* Smooth hover animation */
+}
+
+.template-card:hover {
+    transform: scale(1.05);     /* Slight zoom on hover */
+}
+
+/* Template preview images - 65% blur for privacy */
+.template-card img {
+    width: 100%;             
+    object-fit: cover;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+
+    filter: blur(1.5px);         /* ~65% blur */
+}
+
+.tpl-title {
+    font-weight: 700;
+    margin-top: 8px;
+    font-size: 16px;
+}
+
+.tpl-options {
+    margin: 12px 0;
+    text-align: left;
+}
+
+.font-preview {
+    border: 1px dashed #ccc;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+.template-card button {
+    margin-top: 8px;
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* =========================
+   Editor Form
+========================= */
+#form-area {
+    display: block;
+    margin-top: 10px;
+}
+
+.group {
+    margin-bottom: 12px;
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+input[type=text],
+textarea,
+select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #999;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.row .group {
+    flex: 1;
+    min-width: 280px;
+}
+
+.small {
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.actions {
+    margin-top: 14px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.actions button {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn-primary {
+    background: var(--accent);
+    color: #fff;
+}
+
+.btn-secondary {
+    background: #6b7280;
+    color: #fff;
+}
+
+/* =========================
+   Preview Box - clear in editor
+========================= */
+.preview-box {
+    margin-top: 12px;
+    padding: 18px;
+    border-radius: 6px;
+    background: #fff;
+    border: 1px dashed #d8dde0;
+    overflow: visible;           /* Show full resume without cutting */
+    width: 100%;
+}
+
+.preview-box .resume {
+    width: 900px;                /* Desktop resume width */
+    max-width: 100%;             /* Responsive for smaller screens */
+    margin: 0 auto;
+    font-size: 14px;
+    line-height: 1.5;
+    /* Editor preview is clear, no blur */
+}
+
+/* Tables inside resume */
+.preview-box .resume table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.preview-box .resume table th,
+.preview-box .resume table td {
+    padding: 8px 6px;
+    border: 1px solid #e3e7e7;
+    text-align: left;
+}
+
+/* =========================
+   Education Row
+========================= */
+.edu-row {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 6px;
+    flex-wrap: wrap;
+}
+
+.edu-row input {
+    flex: 1;
+    min-width: 100px;
+}
+
+.small-btn {
+    padding: 6px 8px;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+    background: #fff;
+    cursor: pointer;
+}
+
+.checkbox-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+/* =========================
+   Responsive
+========================= */
+@media (max-width: 768px) {
+    .template-card {
+        width: 280px;
+    }
+
+    .row .group {
+        min-width: 280px;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    /* Scale resume slightly on mobile */
+    .preview-box .resume {
+        transform: scale(0.9);
+        transform-origin: top center;
+    }
+}

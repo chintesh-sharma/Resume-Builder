@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Professional Resume Builder</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Professional Resume Builder</h1>
+</header>
+
+<main>
+  <!-- TEMPLATE SELECTION -->
+  <section id="template-selection" class="card">
+    <h2 id ="UpHeading">Choose Your Template</h2>
+    <div class="templates-row">
+      <div class="template-card">
+        <img src="assests/chintesh.png" alt="Template Preview">
+        <div class="tpl-title">Resume Without Experience</div>
+        <div class="tpl-options">
+          <label>Heading Font:</label>
+          <select id="heading-font" onchange="updateFontPreview()">
+            <option value="'Georgia', serif">John Doe</option>
+            <option value="'Arial', sans-serif">John Doe</option>
+            <option value="'Times New Roman', serif">John Doe</option>
+            <option value="'Verdana', sans-serif">John Doe</option>
+          </select>
+          <label>Subheading Font:</label>
+          <select id="subheading-font" onchange="updateFontPreview()">
+            <option value="'Georgia', serif">Web Developer | Contact Info</option>
+            <option value="'Arial', sans-serif">Web Developer | Contact Info</option>
+            <option value="'Times New Roman', serif">Web Developer | Contact Info</option>
+            <option value="'Verdana', sans-serif">Web Developer | Contact Info</option>
+          </select>
+          <label>Primary Color:</label>
+          <input type="color" id="color-select" value="#10636d" onchange="updateFontPreview()">
+        </div>
+        <div id="font-preview" class="font-preview">
+          <div style="font-family:'Georgia', serif; font-size:28px; color:#10636d;">John Doe</div>
+          <div style="font-family:'Georgia', serif; font-size:16px; color:#10636d;">Web Developer | Contact Info</div>
+        </div>
+        <button id="use-template-btn">Use this template</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDITOR -->
+  <section id="editor" class="card" style="display:none;">
+    <h2>Edit Your Resume</h2>
+    <div id="form-area"></div>
+
+    <label class="checkbox-row">
+      <input type="checkbox" id="no-project" onchange="toggleProject()"> I don't have a project
+    </label>
+
+    <div class="actions">
+      <button class="btn-primary" id="preview-btn">Preview</button>
+      <button class="btn-primary" id="download-btn">Download PDF</button>
+      <button class="btn-secondary" id="back-btn">Back</button>
+    </div>
+
+    <h3>Preview</h3>
+    <div id="preview" class="preview-box"></div>
+  </section>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.3/html2pdf.bundle.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
+
